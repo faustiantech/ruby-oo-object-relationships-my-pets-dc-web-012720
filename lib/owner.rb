@@ -1,3 +1,6 @@
+require 'pry'
+require_relative './cat.rb'
+require_relative './dog.rb'
 class Owner
   attr_reader :name, :species
   @@all = []
@@ -24,4 +27,12 @@ class Owner
     @@all = []
     return @@all
   end
+
+  def cats
+     Cat.all.select {|kitty| kitty.owner.name == self.name}
+  end
+
+  def dogs
+    Dog.all.select {|doggy| doggy.owner.name == self.name}
+ end
 end
