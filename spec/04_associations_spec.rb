@@ -1,4 +1,5 @@
 require_relative 'spec_helper.rb'
+require 'pry'
 
 describe "Associations" do
   before do
@@ -7,6 +8,7 @@ describe "Associations" do
 
   after do
     Owner.all.clear
+    #Cat.all.clear
   end
 
   context 'Owner instance methods' do
